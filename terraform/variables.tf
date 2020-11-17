@@ -3,12 +3,12 @@ variable location {
 }
 
 variable prefix {
-    default="mfapim"
+    default="ins-domain"
 }
 
 resource "random_id" "storage_name" {
   keepers = {
-    resource_group = azurerm_resource_group.rg.name
+    resource_group = data.azurerm_resource_group.rg.name
   }
   byte_length = 8
 }
